@@ -33,7 +33,8 @@ php artisan serve
 ```
 ### API Documentation
 https://documenter.getpostman.com/view/6108589/2s9Xy3sB2f
-If you prefer local, here is a Postman collection in the root directory of the project. You can import it to Postman to read the Api documentation and test the API endpoints.
+
+If you prefer local, There is a Postman collection in the root directory of the project. You can import it to Postman to read the Api documentation and test the API endpoints.
 
 #### Minor Usage Guide
 Use Api endpoints to create a new user and login to the application. Then use the token to access the protected endpoints.
