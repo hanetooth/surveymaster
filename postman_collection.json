@@ -1,0 +1,561 @@
+{
+	"info": {
+		"_postman_id": "84af6a7b-c933-4eb1-9825-7049f049affe",
+		"name": "survey_app",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "6108589"
+	},
+	"item": [
+		{
+			"name": "auth",
+			"item": [
+				{
+					"name": "login",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-XSRF-TOKEN",
+								"value": "{{XSRF_TOKEN}}",
+								"type": "text"
+							},
+							{
+								"key": "X-Requested-With",
+								"value": "XMLHttpRequest",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "test@example.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "Pa$$w0rd,",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{APP_URL}}/api/v1/login",
+							"host": [
+								"{{APP_URL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"login"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "login",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "X-XSRF-TOKEN",
+										"value": "{{XSRF_TOKEN}}",
+										"type": "text"
+									},
+									{
+										"key": "X-Requested-With",
+										"value": "XMLHttpRequest",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "email",
+											"value": "test@example.com",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "Pa$$w0rd,",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{APP_URL}}/api/v1/login",
+									"host": [
+										"{{APP_URL}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 10 Aug 2023 12:41:13 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 10 Aug 2023 12:41:13 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.1.2-1ubuntu2.13"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"user\": {\n        \"id\": 1,\n        \"name\": \"Mr.John Doe\",\n        \"email\": \"test@example.com\",\n        \"email_verified_at\": null,\n        \"created_at\": \"2023-08-10T06:50:26.000000Z\",\n        \"updated_at\": \"2023-08-10T06:50:26.000000Z\"\n    },\n    \"token\": \"6|D10H1dSN3g8IN4Oc13Vn248oizQ1nbJ0cyOxGXnM\"\n}"
+						}
+					]
+				},
+				{
+					"name": "register",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"content-type": true
+						}
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-XSRF-TOKEN",
+								"value": "{{XSRF_TOKEN}}",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "X-Requested-With",
+								"value": "XMLHttpRequest",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"test@example.com\",\n    \"name\": \"Mr.John Doe\",\n    \"password\": \"Pa$$w0rd,\",\n    \"password_confirmation\": \"Pa$$w0rd,\"\n}"
+						},
+						"url": {
+							"raw": "{{APP_URL}}/api/v1/register",
+							"host": [
+								"{{APP_URL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"register"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "register",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "X-XSRF-TOKEN",
+										"value": "{{XSRF_TOKEN}}",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "X-Requested-With",
+										"value": "XMLHttpRequest",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"email\": \"test@example.com\",\n    \"name\": \"Mr.John Doe\",\n    \"password\": \"Pa$$w0rd,\",\n    \"password_confirmation\": \"Pa$$w0rd,\"\n}"
+								},
+								"url": {
+									"raw": "{{APP_URL}}/api/v1/register",
+									"host": [
+										"{{APP_URL}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"register"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 10 Aug 2023 05:43:36 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 10 Aug 2023 05:43:36 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.1.2-1ubuntu2.13"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"access_token\": \"1|z5RosZNo9HVI7zvchYPy50EzaTyohHSNEiXAZdWI\",\n    \"token_type\": \"Bearer\",\n    \"user\": {\n        \"name\": \"Mr.John Doe\",\n        \"email\": \"test@example.com\",\n        \"updated_at\": \"2023-08-10T05:43:36.000000Z\",\n        \"created_at\": \"2023-08-10T05:43:36.000000Z\",\n        \"id\": 1\n    }\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "components",
+			"item": [
+				{
+					"name": "all",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-Requested-With",
+								"value": "XMLHttpRequest",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{APP_URL}}/api/v1/components",
+							"host": [
+								"{{APP_URL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"components"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "all",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "X-Requested-With",
+										"value": "XMLHttpRequest",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{APP_URL}}/api/v1/components",
+									"host": [
+										"{{APP_URL}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"components"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 10 Aug 2023 12:40:36 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 10 Aug 2023 12:40:36 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.1.2-1ubuntu2.13"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": [\n        {\n            \"id\": 1,\n            \"name\": \"input_text\",\n            \"content\": \"<input type=\\\"text\\\" class=\\\"h-10 border mt-1 rounded px-4 w-full bg-gray-50\\\" %s/>\"\n        },\n        {\n            \"id\": 2,\n            \"name\": \"input_date_picker\",\n            \"content\": \"<input type=\\\"date\\\" class=\\\"h-10 border mt-1 rounded px-4 w-full bg-gray-50\\\" %s/>\"\n        },\n        {\n            \"id\": 3,\n            \"name\": \"input_number\",\n            \"content\": \"<input type=\\\"number\\\" class=\\\"h-10 border mt-1 rounded px-4 w-full bg-gray-50\\\" %s/>\"\n        }\n    ]\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "forms",
+			"item": [
+				{
+					"name": "create",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"content-type": true
+						}
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "X-Requested-With",
+								"value": "XMLHttpRequest",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"Lorem Form\",\n    \"description\": \"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus consectetur rhoncus felis, quis imperdiet erat fermentum et. Sed viverra semper consectetur. Pellentesque nec faucibus magna.\",\n    \"questions\": [\n        {\n            \"text\": \"Name\",\n            \"hint\": \"Enter your full name\",\n            \"is_required\": true,\n            \"component_id\": 1\n        },\n        {\n            \"text\": \"Phone Number\",\n            \"hint\": \"With country code\",\n            \"is_required\": false,\n            \"component_id\": 3\n        },\n        {\n            \"text\": \"Date of birth\",\n            \"is_required\": true,\n            \"component_id\": 2\n        },\n        {\n            \"text\": \"Gender\",\n            \"is_required\": true,\n            \"component_id\": 1\n        }\n    ]\n}"
+						},
+						"url": {
+							"raw": "{{APP_URL}}/api/v1/forms/create",
+							"host": [
+								"{{APP_URL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"forms",
+								"create"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "create",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "X-Requested-With",
+										"value": "XMLHttpRequest",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"title\": \"Lorem Form\",\n    \"description\": \"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus consectetur rhoncus felis, quis imperdiet erat fermentum et. Sed viverra semper consectetur. Pellentesque nec faucibus magna.\",\n    \"questions\": [\n        {\n            \"text\": \"Name\",\n            \"hint\": \"Enter your full name\",\n            \"is_required\": true,\n            \"component_id\": 1\n        },\n        {\n            \"text\": \"Phone Number\",\n            \"hint\": \"With country code\",\n            \"is_required\": false,\n            \"component_id\": 3\n        },\n        {\n            \"text\": \"Date of birth\",\n            \"is_required\": true,\n            \"component_id\": 2\n        },\n        {\n            \"text\": \"Gender\",\n            \"is_required\": true,\n            \"component_id\": 1\n        }\n    ]\n}"
+								},
+								"url": {
+									"raw": "{{APP_URL}}/api/v1/forms/create",
+									"host": [
+										"{{APP_URL}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"forms",
+										"create"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 10 Aug 2023 12:40:20 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 10 Aug 2023 12:40:20 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.1.2-1ubuntu2.13"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"form\": {\n        \"title\": \"Lorem Form\",\n        \"description\": \"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus consectetur rhoncus felis, quis imperdiet erat fermentum et. Sed viverra semper consectetur. Pellentesque nec faucibus magna.\",\n        \"owner_id\": 1,\n        \"is_published\": true,\n        \"version\": 1,\n        \"updated_at\": \"2023-08-10T12:40:20.000000Z\",\n        \"created_at\": \"2023-08-10T12:40:20.000000Z\",\n        \"id\": 2\n    },\n    \"form_url\": \"http://127.0.0.1:8000/form/YPqNpMQ6JmX8K\"\n}"
+						}
+					]
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "{{BEARER_TOKEN}}",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					"pm.sendRequest({",
+					"    url: pm.environment.get('APP_URL') + '/sanctum/csrf-cookie',",
+					"    method: 'GET'",
+					"}, function (error, response, { cookies }) {",
+					"    if (!error) {",
+					"        pm.environment.set('XSRF_TOKEN', cookies.get('XSRF-TOKEN'))",
+					"    }",
+					"})"
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "APP_URL",
+			"value": "http://localhost:8000",
+			"type": "string"
+		}
+	]
+}
